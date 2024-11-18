@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主页</title>
+    <link rel="icon" href="resources/home.png">
+    <link rel="stylesheet" href="css/sets.css">
+    <link rel="stylesheet" href="css/client.css">
+    <script src="js/client.js"></script>
+    <script src="js/echarts.js"></script>
+</head>
+<body>
+    <!---顶部注释以及时间显示--->
+    <div id="leftTopBY" onclick="alert('wx:XueMingTangTaiZong,Silence_W969')">Supported by 唐天笑&魏莱 &emsp;<b><em>问题反馈</em></b></div>
+    <div id="rightTopTime"></div>
+    <!---本月中草药--->
+    <div id="studyRecent">↓↓↓本月中草药↓↓↓</div>
+    <div id="studyMore" onclick="window.open('studyMore.html','_blank')">点我跳转详细学习页面</div>
+    <div class="wrapper">
+        <div class="items">
+          <div class="item" tabindex="0" style="background:url(resources/q/1-1-1.png)"></div>
+          <div class="item" tabindex="0" style="background:url(resources/q/1-2-1.png)"></div>
+          <div class="item" tabindex="0" style="background:url(resources/q/1-3-1.png)"></div>
+          <div class="item" tabindex="0" style="background:url(resources/q/1-4-1.png)"></div>
+        <!---
+          <div class="item" tabindex="0" style="background:coral"></div>
+          <div class="item" tabindex="0" style="background:lightblue"></div>
+          <div class="item" tabindex="0" style="background:purple"></div>
+          <div class="item" tabindex="0" style="background:cadetblue"></div>
+          <div class="item" tabindex="0" style="background:lightpink"></div>
+          <div class="item" tabindex="0" style="background:indianred"></div>
+          <div class="item" tabindex="0" style="background:khaki"></div>
+          <div class="item" tabindex="0" style="background:palegreen"></div>
+        --->
+        </div>
+    </div>
+    <!---下部统计--->
+    <div id="pieAverageScore"></div>
+    <span id="pieTipAverageScore">上次考试成绩平均分</span>
+    <div id="pieListScore"></div>
+    <span id="pieTipListScore">上次考试前10排行</span>
+    <!---考核入口--->
+    <button id="startExam" onclick="window.open('exam.html','_blank')">进入考试</button>
+</body>
+</html>

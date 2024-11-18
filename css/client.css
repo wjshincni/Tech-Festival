@@ -1,0 +1,199 @@
+* {
+    box-sizing: border-box;
+}
+
+
+/*Supported By & time*/
+#leftTopBY{
+    font-size: 2em;
+    position: fixed;
+    left: 0;
+    top: 0;
+    opacity: 0.8;
+    font-family: gamefont , ttx;
+}
+
+#rightTopTime{
+    position: fixed;
+    font-size: 3em;
+    font-family: ttx;
+    right: 0;
+    top: 0;
+    text-shadow: 1em 0 1em rgb(255, 228, 73);
+}
+
+/*主体（相册）排列*/
+#studyRecent{
+    display: block;
+    position: fixed;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%,0);
+    font-family: ttx;
+    font-size: 3em;
+    text-shadow: 1em 1em 1em white;
+    color: coral;
+}
+
+#studyMore{
+    display: block;
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%,0);
+    font-family: ttx;
+    font-size: 2em;
+    text-shadow: 1em 1em 1em white;
+    color: rgba(128, 128, 128, 0.658);
+    cursor: grab;
+}
+
+:root{
+    --index: calc(1vw + 1vh);
+    --transition: cubic-bezier(.1, .7, 0, 1);
+}
+
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+.items{
+    display: flex;
+    gap: 0.4rem;
+    perspective: calc(var(--index) * 35);
+}
+
+.item{
+    width: calc(var(--index) * 3);
+    height: calc(var(--index) * 12);
+    background-color: #222;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: grab;
+    filter: grayscale(1) brightness(.5);
+    transition: transform 1.25s var(--transition), filter 3s var(--transition), width 1.25s var(--transition);
+    will-change: transform, filter, rotateY, width;
+}
+
+.item::before, .item::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 20px;
+    right: calc(var(--index) * -1);
+}
+
+.item::after{
+    left: calc(var(--index) * -1);
+}
+
+.items .item:hover{
+    filter: inherit;
+    transform: translateZ(calc(var(--index) * 10));
+}
+
+/*Right*/
+
+.items .item:hover + *{
+    filter: inherit;
+    transform: translateZ(calc(var(--index) * 8.5)) rotateY(35deg);
+    z-index: -1;
+}
+
+.items .item:hover + * + *{
+    filter: inherit;
+    transform: translateZ(calc(var(--index) * 5.6)) rotateY(40deg);
+    z-index: -2;
+}
+
+.items .item:hover + * + * + *{
+    filter: inherit;
+    transform: translateZ(calc(var(--index) * 2.5)) rotateY(30deg);
+    z-index: -3;
+}
+
+.items .item:hover + * + * + * + *{
+    filter: inherit;
+    transform: translateZ(calc(var(--index) * .6)) rotateY(15deg);
+    z-index: -4;
+}
+
+
+/*Left*/
+
+.items .item:has( + :hover){
+    filter: inherit;
+    transform: translateZ(calc(var(--index) * 8.5)) rotateY(-35deg);
+}
+
+.items .item:has( + * + :hover){
+    filter: inherit;
+    transform: translateZ(calc(var(--index) * 5.6)) rotateY(-40deg);
+}
+
+.items .item:has( + * + * + :hover){
+    filter: inherit;
+    transform: translateZ(calc(var(--index) * 2.5)) rotateY(-30deg);
+}
+
+.items .item:has( + * + * + * + :hover){
+    filter: inherit;
+    transform: translateZ(calc(var(--index) * .6)) rotateY(-15deg);
+}
+
+.items .item:active, .items .item:focus {
+	width: 280vh;
+	filter: inherit;
+	z-index: 100;
+	transform: translateZ(calc(var(--index) * 10));
+    margin: 0 .45vw;
+    background-size: contain;
+    background-position: center;
+}
+
+/*下部统计以及考试入口*/
+#pieAverageScore{
+    bottom: -5%;
+    right: -10%;
+    height: 40%;
+    width: 40%;
+    position: fixed;
+}
+#pieTipAverageScore{
+    font-size: 2em;
+    position: fixed;
+    bottom: 32%;
+    right: 6%;
+    font-family: ttx;
+    color: blanchedalmond;
+}
+#pieListScore{
+    bottom: 0;
+    right: 18%;
+    height: 35%;
+    width: 60%;
+    position: fixed;
+}
+#pieTipListScore{
+    font-size: 2em;
+    position: fixed;
+    bottom: 32%;
+    right: 44%;
+    font-family: ttx;
+    color: blanchedalmond;
+}
+#startExam{
+    bottom: 10%;
+    width: 15em;
+    height: 12em;
+    left: 5%;
+}
+#startExam:active{
+    width: 12em;
+    height: 9.6em;
+    left:calc(5% + 1.5em)
+}
